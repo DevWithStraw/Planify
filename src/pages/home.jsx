@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import "./App.scss";
+import { useState } from "react";
+import "./home.scss";
 
-function App() {
+function Home() {
   const [count, setCount] = useState(0);
 
   return (
@@ -34,4 +34,4 @@ function App() {
   );
 }
 
-export default App
+export default Home;
