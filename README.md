@@ -1,8 +1,7 @@
-# React + Vite
+This is a Vite Template Project With React and JS 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+3 Branches are introduced to the client
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.Main: This just includes the default structre and package vite uses
+2.Scss: This branch introduces just simple installation of sass in the project with a simple folder structre 7-1
+3.Advanced: The same as the Scss but with a twist of adding more complexd features that might be updated...
