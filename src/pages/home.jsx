@@ -1,8 +1,12 @@
 import React from 'react'
 import "./home.scss";
 
+import Task from '../components/task';
+
 export default function home() {
   return (
-    <div>Homepage</div>
+    <>
+      <Task/>
+    </>
   )
 }
