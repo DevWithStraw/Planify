@@ -2,6 +2,13 @@
 @use "../base/colors" as color;
 @use "../base/fonts" as *;
 
+.task-skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between skeletons */
+  margin-top: 20px;
+}
+
 .empty-tasks-section {
   @include flex(center, center, column);
   width: 100%;
