@@ -2,25 +2,37 @@ import React from "react";
 import "./home.scss";
 
 import Task from "../components/task";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import Loader from "../components/skeletonloader";
 
+import { useQuery } from "@tanstack/react-query";
 import { baseUrl } from "../helpers/urls";
+
+import axios from "axios";
 
 export default function home() {
   const fetchTasks = async () => {
     return await axios.get(`${baseUrl}/tasks`).then((res) => res.data);
   };
 
-  const { data: tasks } = useQuery({
+  const { data: tasks, isLoading } = useQuery({
     queryKey: ["tasks"],
     queryFn: fetchTasks,
   });
 
+  if (isLoading) {
+    return (
+      <div className="task-skeleton-container">
+        {[...Array(8)].map((_, index) => (
+          <Loader key={index} />
+        ))}
+      </div>
+    );
+  }
+
   return (
     <>
       {tasks ? (
-        tasks?.map((task) => <Task title={task.title} />)
+        tasks?.map((task) => <Task key={task.id} title={task.title} />)
       ) : (
         <section className="empty-tasks-section">
           <img src="/assets/icons/checked.svg" alt="checked icon" />
