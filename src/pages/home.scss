@@ -1,0 +1,38 @@
+@use "../utils/mixins" as *;
+@use "../base/colors" as color;
+@use "../base/fonts" as *;
+
+.task-skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between skeletons */
+  margin-top: 20px;
+}
+
+.empty-tasks-section {
+  @include flex(center, center, column);
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  gap: 0.5rem;
+
+  img{
+    margin-bottom: 0.5rem;
+  }
+
+  h1,
+  span {
+    color: color.$main;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-family: $black;
+  }
+
+  span {
+    font-family: $regular;
+    font-size: 0.9rem;
+    word-spacing: 0.3rem;
+  }
+}

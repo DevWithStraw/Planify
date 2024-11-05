@@ -1,0 +1,102 @@
+// fonts.scss
+
+// Font paths (using a variable for the path)
+$font-path: "../fonts";
+
+// Font families
+$black: "lato-black";
+$black-em: "lato-black-em";
+$bold: "lato-bold";
+$bold-em: "lato-bold-em";
+$regular: "lato-regular";
+$regular-em: "lato-regular-em";
+$light: "lato-light";
+$light-em: "lato-light-em";
+$thin: "lato-thin";
+$thin-em: "lato-thin-em";
+
+// Font weights
+$font-weight-black: 900;
+$font-weight-bold: 700;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+$font-weight-thin: 100;
+
+// Font display property (can also be changed to other values like "block", "swap", etc.)
+$font-display: swap;
+
+// Define @font-face using variables
+@font-face {
+  font-family: $black;
+  src: url("#{$font-path}/Lato-Black.ttf");
+  font-weight: $font-weight-black;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: $black-em;
+  src: url("#{$font-path}/Lato-BlackItalic.ttf");
+  font-weight: $font-weight-black;
+  font-style: italic;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: $bold;
+  src: url("#{$font-path}/Lato-Bold.ttf");
+  font-weight: $font-weight-bold;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: $bold-em;
+  src: url("#{$font-path}/Lato-BoldItalic.ttf");
+  font-weight: $font-weight-bold;
+  font-style: italic;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: $regular;
+  src: url("#{$font-path}/Lato-Regular.ttf");
+  font-weight: $font-weight-regular;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: $regular-em;
+  src: url("#{$font-path}/Lato-Italic.ttf");
+  font-weight: $font-weight-regular;
+  font-style: italic;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: $light;
+  src: url("#{$font-path}/Lato-Light.ttf");
+  font-weight: $font-weight-light;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: $light-em;
+  src: url("#{$font-path}/Lato-LightItalic.ttf");
+  font-weight: $font-weight-light;
+  font-style: italic;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: $thin;
+  src: url("#{$font-path}/Lato-Thin.ttf");
+  font-weight: $font-weight-thin;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: $thin-em;
+  src: url("#{$font-path}/Lato-ThinItalic.ttf");
+  font-weight: $font-weight-thin;
+  font-style: italic;
+  font-display: $font-display;
+}
