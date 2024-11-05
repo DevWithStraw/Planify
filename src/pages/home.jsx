@@ -9,7 +9,7 @@ import { baseUrl } from "../helpers/urls";
 
 import axios from "axios";
 
-export default function home() {
+export default function Home() {
   const fetchTasks = async () => {
     return await axios.get(`${baseUrl}/tasks`).then((res) => res.data);
   };
@@ -29,10 +29,20 @@ export default function home() {
     );
   }
 
+  if (tasks && tasks.length === 0) {
+    return (
+      <section className="empty-tasks-section">
+        <img src="/assets/icons/checked.svg" alt="checked icon" />
+        <h1> Add Some Tasks </h1>
+        <span> Press a to create a new task </span>
+      </section>
+    );
+  }
+
   return (
-    <>
-      {tasks ? (
-        tasks?.map((task) => <Task key={task.id} title={task.title} />)
+    <div>
+      {tasks && tasks.length > 0 ? (
+        tasks.map((task) => <Task key={task.id} title={task.title} />)
       ) : (
         <section className="empty-tasks-section">
           <img src="/assets/icons/checked.svg" alt="checked icon" />
@@ -40,6 +50,6 @@ export default function home() {
           <span> Press a to create a new task </span>
         </section>
       )}
-    </>
+    </div>
   );
 }
