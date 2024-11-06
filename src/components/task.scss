@@ -3,7 +3,7 @@
 @use "../utils/mixins" as *;
 
 .task-container {
-  @include flex(flex-start , center , row);
+  @include flex(flex-start, center, row);
   width: 100%;
   height: max-content;
   padding: 0.5rem;
@@ -14,7 +14,7 @@
     height: 0.5rem;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em color.$orange;
+    box-shadow: inset 1em 1em color.$blue;
   }
 
   input[type="checkbox"]:checked::before {
@@ -23,9 +23,10 @@
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   }
 
-  input[type="checkbox"]:focus {
+  input[type="checkbox"]:focus,
+  input[type="checkbox"]:checked {
     outline: none;
-    border: 1px solid color.$orange;
+    border: 1px solid color.$blue;
   }
 
   input {
