@@ -1,6 +1,7 @@
+@use '../utils/mixins' as *;
+
 .skeleton-loader {
-  display: flex;
-  flex-direction: row;
+  @include flex(flex-start , flex-start , row);
   padding: 1rem;
   width: 100%;
   height: max-content;
