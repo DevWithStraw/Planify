@@ -1,9 +1,9 @@
 @use "../base/fonts" as *;
 @use "../base/colors" as color;
+@use "../utils/mixins" as *;
 
 .task-container {
-  display: flex;
-  align-items: center;
+  @include flex(flex-start , center , row);
   width: 100%;
   height: max-content;
   padding: 0.5rem;
