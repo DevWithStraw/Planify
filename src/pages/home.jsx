@@ -40,7 +40,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className="tasks-container">
       {tasks && tasks.length > 0 ? (
         tasks.map((task) => <Task key={task.id} title={task.title} />)
       ) : (

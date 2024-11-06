@@ -3,10 +3,14 @@
 @use "../base/fonts" as *;
 
 .task-skeleton-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Space between skeletons */
+  @include flex(center , flex-start , column);
+  gap: 15px; /* Space between skeletons loaders*/
   margin-top: 20px;
+}
+
+.tasks-container{
+  height: 100%;
+  padding: 1rem;
 }
 
 .empty-tasks-section {
