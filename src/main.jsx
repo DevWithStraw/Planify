@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import Home from "./pages/home";
+//packages
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+//pages
+import Home from "./pages/home";
+
+//components
+import AddButton from "./components/add-button";
 
 const queryClient = new QueryClient();
 
@@ -14,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+        <AddButton />
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>
