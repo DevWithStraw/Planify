@@ -17,6 +17,7 @@ export default function Home() {
   const { data: tasks, isLoading } = useQuery({
     queryKey: ["tasks"],
     queryFn: fetchTasks,
+    refetchInterval: 100
   });
 
   if (isLoading) {
@@ -42,7 +43,7 @@ export default function Home() {
   return (
     <div className="tasks-container">
       {tasks && tasks.length > 0 ? (
-        tasks.map((task) => <Task key={task.id} title={task.title} />)
+        tasks.map((task) => <Task key={task.id} title={task.title} id={task.id} />)
       ) : (
         <section className="empty-tasks-section">
           <img src="/assets/icons/checked.svg" alt="checked icon" />
