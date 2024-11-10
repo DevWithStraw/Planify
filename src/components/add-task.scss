@@ -1,0 +1,110 @@
+@use "../utils/mixins" as *;
+@use "../base/colors" as color;
+@use "../base/fonts" as *;
+
+.new-task-container {
+  // Initial state off-screen
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+  position: fixed;
+  bottom: 0;
+
+  &.slide-up {
+    transform: translateY(0);
+  }
+
+  &.slide-down {
+    transform: translateY(100%);
+  }
+}
+
+.new-task-container {
+  @include flex(flex-end, center, column);
+  width: 100%;
+  height: 100dvh;
+  background-color: #00000086;
+  z-index: 99;
+
+  main {
+    @include flex(initial, initial, column);
+    width: 100%;
+    height: 50%;
+    border-radius: 15px 15px 0 0;
+    background-color: color.$black;
+    z-index: 99;
+    color: color.$main;
+    font-family: $bold;
+    padding: 0.5rem;
+
+    button.close {
+      @include flex(center, center, row);
+      background-color: #202020;
+      border: none;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      align-self: flex-end;
+      margin-bottom: 1rem;
+
+      img {
+        width: 50%;
+      }
+    }
+
+    section {
+      @include flex(center, center, column);
+      background-color: #282828;
+      box-shadow: 1px 1px 2px #3f3f3f, -1px -1px 2px #3f3f3f;
+      height: 150px;
+      border-radius: 0.5rem;
+
+      input,
+      textarea {
+        width: 100%;
+        background-color: transparent;
+        color: color.$main;
+        border: none;
+        outline: none;
+        margin-left: 1.5rem;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        font-family: $bold;
+        font-size: 0.8rem;
+      }
+
+      input {
+        height: 25%;
+      }
+
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #484848;
+      }
+
+      textarea {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 75%;
+        max-height: 75%;
+        padding: 1rem 0.2rem;
+      }
+    }
+
+    button.add {
+      background-color: color.$blue;
+      color: #fff;
+      width: max-content;
+      height: max-content;
+      padding: 0.6rem 0.7rem;
+      border: none;
+      border-radius: 0.4rem;
+      font-family: $bold;
+      word-spacing: 0.1rem;
+      align-self: flex-end;
+      margin-top: 0.8rem;
+    }
+  }
+}

@@ -1,18 +1,18 @@
-@use '../utils/mixins' as *;
-@use '../base/colors' as color;
+@use "../utils/mixins" as *;
+@use "../base/colors" as color;
 
-button{
-    @include flex(center , center , initial);
-    position: absolute;
-    bottom: 20px;
-    right: 10px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background-color: color.$blue;
+.add-button {
+  @include flex(center, center, initial);
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: color.$blue;
 
-    img{
-        width: 50%;
-    }
+  img {
+    width: 50%;
+  }
 }
