@@ -20,15 +20,15 @@ export default function Home() {
     refetchInterval: 100
   });
 
-  if (isLoading) {
-    return (
-      <div className="task-skeleton-container">
-        {[...Array(8)].map((_, index) => (
-          <Loader key={index} />
-        ))}
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="task-skeleton-container">
+  //       {[...Array(8)].map((_, index) => (
+  //         <Loader key={index} />
+  //       ))}
+  //     </div>
+  //   );
+  // }
 
   if (tasks && tasks.length === 0) {
     return (
