@@ -1,9 +1,75 @@
+@font-face {
+  font-family: "lato-black";
+  src: url("../fonts/Lato-Black.ttf");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "lato-black-em";
+  src: url("../fonts/Lato-BlackItalic.ttf");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "lato-bold";
+  src: url("../fonts/Lato-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "lato-bold-em";
+  src: url("../fonts/Lato-BoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "lato-regular";
+  src: url("../fonts/Lato-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "lato-regular-em";
+  src: url("../fonts/Lato-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "lato-light";
+  src: url("../fonts/Lato-Light.ttf");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "lato-light-em";
+  src: url("../fonts/Lato-LightItalic.ttf");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "lato-thin";
+  src: url("../fonts/Lato-Thin.ttf");
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: "lato-thin-em";
+  src: url("../fonts/Lato-ThinItalic.ttf");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "lato-regular";
 }
 
 body {
@@ -16,6 +82,10 @@ a {
 
 ul {
   list-style: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
