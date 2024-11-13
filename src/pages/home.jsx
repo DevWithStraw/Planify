@@ -17,18 +17,8 @@ export default function Home() {
   const { data: tasks, isLoading } = useQuery({
     queryKey: ["tasks"],
     queryFn: fetchTasks,
-    refetchInterval: 100
+    refetchInterval: 100,
   });
-
-  // if (isLoading) {
-  //   return (
-  //     <div className="task-skeleton-container">
-  //       {[...Array(8)].map((_, index) => (
-  //         <Loader key={index} />
-  //       ))}
-  //     </div>
-  //   );
-  // }
 
   if (tasks && tasks.length === 0) {
     return (
@@ -43,7 +33,14 @@ export default function Home() {
   return (
     <div className="tasks-container">
       {tasks && tasks.length > 0 ? (
-        tasks.map((task) => <Task key={task.id} title={task.title} id={task.id} />)
+        tasks.map((task) => (
+          <Task
+            key={task.id}
+            title={task.title}
+            id={task.id}
+            checked={task.checked}
+          />
+        ))
       ) : (
         <section className="empty-tasks-section">
           <img src="/assets/icons/checked.svg" alt="checked icon" />

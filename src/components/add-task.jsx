@@ -15,6 +15,7 @@ export default function AddTask({ onClose, className }) {
         .post(`${baseUrl}/tasks`, {
           title: taskTitle,
           description: taskDesc,
+          checked : false,
         })
         .then((res) => console.log(res.data));
       onClose(false);
