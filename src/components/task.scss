@@ -3,14 +3,29 @@
 @use "../utils/mixins" as *;
 
 .task-container {
-  @include flex(flex-start, center, row);
+  @include flex(center, center, column);
   width: 100%;
   height: max-content;
-  padding: 0.5rem;
+  position: relative;
+
+  main {
+    @include flex(initial, initial, row);
+    width: 100%;
+    height: max-content;
+    padding: 0.5rem 1rem;
+    z-index: 2;
+  }
+
+  .row {
+    @include flex(initial, center, row);
+    width: 100%;
+    padding: 0.5rem 0;
+    height: max-content;
+  }
 
   input[type="checkbox"]::before {
-    content: "";
     width: 0.5rem;
+    content: "";
     height: 0.5rem;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
@@ -29,27 +44,144 @@
     border: 1px solid color.$blue;
   }
 
-  input {
+  input[type="checkbox"] {
     display: grid;
-    place-content: center;
     margin-right: 0.5rem;
+    place-content: center;
     font-size: 3rem;
     -webkit-appearance: none;
     appearance: none;
-    font: inherit;
-    color: color.$main;
-    width: 1.15rem;
-    height: 1.15rem;
-    border: 1px solid color.$main;
+    width: 1.5rem;
+    color: color.$checkbox;
+    height: 1.5rem;
+    border: 2px solid color.$checkbox;
+    border-radius: 0.3rem;
     transform: translateY(-0.075em);
   }
 
-  input[type="checkbox"]:checked + label {
-    text-decoration: line-through;
+  input[type="text"] {
+    background-color: transparent;
+    border: none;
+    color: color.$main;
+    font-family: $bold;
+    font-size: 1rem;
+    outline: none;
   }
 
   label {
     font-family: $bold;
+    font-size: 1rem;
     color: color.$main;
+    height: fit-content;
+  }
+
+  button.more-options {
+    @include flex(flex-end, center, row);
+    background-color: transparent;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    transition: all linear 0.3s;
+    width: max-content;
+    height: max-content;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  button.more-options:hover {
+    background-color: #2e2d2d;
+  }
+
+  section.more-options {
+    @include flex(flex-end, flex-start, column);
+    background-color: #b0ddfc1f;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    transition: height ease-in-out 0.3s;
+    position: relative;
+    top: -80px;
+
+    .description {
+      display: none;
+      width: 100%;
+      padding: 1rem;
+      margin-top: 3rem;
+
+      .description-preview {
+        max-width: 100%;
+        max-height: 100px;
+        background-color: transparent;
+        color: color.$main;
+        line-height: 1.5rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        text-align: justify;
+        word-spacing: -0.1rem;
+      }
+
+      .description-input {
+        max-width: 100%;
+        width: 100%;
+        min-height: 100px;
+        background-color: transparent;
+        border: none;
+        color: color.$main;
+        line-height: 1.5rem;
+        outline: none;
+        resize: vertical;
+        overflow-y: auto;
+      }
+    }
+
+    ul.options {
+      @include flex(flex-end, center, row);
+      display: none;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.5rem 1rem;
+
+      button {
+        @include flex(initial, center, row);
+        gap: 0.2rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: color.$main;
+        font-family: $bold;
+        padding: 0.2rem;
+
+        img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      button.remove {
+        background-color: #ee292981;
+        border-radius: 0.3rem;
+      }
+    }
+  }
+
+  section.more-options.opened {
+    height: 100%;
+    min-height: 200px;
+    z-index: 1;
+
+    ul.options,
+    .description {
+      display: flex;
+    }
   }
 }

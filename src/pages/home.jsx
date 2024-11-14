@@ -39,6 +39,7 @@ export default function Home() {
             title={task.title}
             id={task.id}
             checked={task.checked}
+            description={task.description}
           />
         ))
       ) : (
