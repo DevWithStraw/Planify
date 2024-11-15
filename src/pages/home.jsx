@@ -14,7 +14,7 @@ export default function Home() {
     return await axios.get(`${baseUrl}/tasks`).then((res) => res.data);
   };
 
-  const { data: tasks, isLoading } = useQuery({
+  const { data: tasks } = useQuery({
     queryKey: ["tasks"],
     queryFn: fetchTasks,
     refetchInterval: 100,

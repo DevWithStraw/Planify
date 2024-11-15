@@ -9,16 +9,19 @@ export default function AddTask({ onClose, className }) {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDesc, setTaskDesc] = useState("");
 
-  const addNewTask = () => {
+  const addNewTask = async () => {
     if (taskTitle !== "" && taskDesc !== "") {
-      axios
-        .post(`${baseUrl}/tasks`, {
+      try {
+        const response = await axios.post(`${baseUrl}/tasks`, {
           title: taskTitle,
           description: taskDesc,
-          checked : false,
-        })
-        .then((res) => console.log(res.data));
-      onClose(false);
+          checked: false,
+        });
+        console.log(response.data);
+        onClose(false);
+      } catch (error) {
+        console.log(error.message);
+      }
     }
   };
 
