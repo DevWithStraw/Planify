@@ -1,1 +1,1 @@
-export const baseUrl = 'https://planify-backend-lac.vercel.app/api'
+export const baseUrl = 'http://localhost:3000'

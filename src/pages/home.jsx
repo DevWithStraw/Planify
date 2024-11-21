@@ -2,7 +2,6 @@ import React from "react";
 import "./home.scss";
 
 import Task from "../components/task";
-import Loader from "../components/skeletonloader";
 
 import { useQuery } from "@tanstack/react-query";
 import { baseUrl } from "../helpers/urls";
@@ -17,7 +16,6 @@ export default function Home() {
   const { data: tasks } = useQuery({
     queryKey: ["tasks"],
     queryFn: fetchTasks,
-    refetchInterval: 100,
   });
 
   if (tasks && tasks.length === 0) {

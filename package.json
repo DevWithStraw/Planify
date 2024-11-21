@@ -4,16 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 80",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "watch": "sass --watch ./src/main.scss:./src/css/main.css",
-    "backend": "npx json-server ./src/database/db.json"
+    "watch": "sass --watch ./src/main.scss:./src/css/main.css"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.59.19",
     "axios": "^1.7.7",
+    "cors": "^2.8.5",
     "json-server": "^1.0.0-beta.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
